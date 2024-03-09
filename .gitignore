@@ -20,6 +20,8 @@ bin/
 
 ### IntelliJ IDEA ###
 src/main/resources/application-hyunmin.yaml
+src/main/resources/application.yaml
+src/main/resources/serviceAccountKey.json
 .idea
 *.iws
 *.iml

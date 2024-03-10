@@ -34,12 +34,12 @@ public class SecurityConfig {
                                 "/api/user/signout",
                                 "/api/user/fcm",
                                 "/api/user/refrech-token",
-                                "/api/user/firebase-token"
+                                "/api/user/firebase-token",
+                                "/api/pay/**"
                         ).authenticated()
                         .requestMatchers(HttpMethod.PATCH, "/api/user").authenticated()
                         .requestMatchers(HttpMethod.GET, "/api/user").authenticated()
                         .requestMatchers(HttpMethod.PUT, "/api/user").authenticated()
-                        .requestMatchers("/api/pay/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/api/prod").authenticated()
                         .requestMatchers(HttpMethod.POST, "/api/prod").authenticated()
                         .requestMatchers(HttpMethod.PUT, "/api/prod").authenticated()

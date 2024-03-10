@@ -176,10 +176,6 @@ public class CleanProductService implements RefProductService {
 
         CommonUtils.ifAllNullThrow(BadMainPicException.class, BAD_PIC_EX_MESSAGE, mainPic);
 
-        // 사진 개수 검증 - 예외 코드, 메시지 를 위해 직접 검증 (!@Validated)
-
-        dto.setIuser(getLoginUserPk());
-
         // 카테고리 검증 - 예외 코드, 메시지 를 위해 직접 검증 (!@Validated)
         CommonUtils.ifCategoryNotContainsThrow(dto.getIcategory());
 
@@ -196,7 +192,7 @@ public class CleanProductService implements RefProductService {
                 , dto.getRentalEndDate(), dto.getRentalStartDate());
         // 날짜 검증 끝
 
-
+        dto.setIuser(getLoginUserPk());
         // logic
         // 주소 검증
         Addrs addrs = axisGenerator.getAxis(dto.getAddr());

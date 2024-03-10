@@ -91,7 +91,7 @@ public class SseEmitterHolder {
             emitterMap.get(info.getIuser()).send(SseEmitter.event()
                     .name(eventName)
                     .data(info, MediaType.APPLICATION_JSON)
-                    );
+            );
         } catch (NullPointerException e) {
             int savedPushCount = emitterRepository.savePushInfoWhenNotExistsEmitterInMap(new RejectMessageInfo(
                     info.getIuser(), info.getMessage(), info.getCode(), info.getNum(), info.getName()
